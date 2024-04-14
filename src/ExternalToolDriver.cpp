@@ -288,6 +288,8 @@ void ExternalToolDriver::runHamConvert(Options& options) {
     hamConvertCommand+=(" diversity_"+std::to_string(options.hcDiversity));
   if(options.hcQuant!="auto")
     hamConvertCommand+=(" quant_"+options.hcQuant);
+  if(options.hcColor!="rgb")
+    hamConvertCommand+=(" color_lab_"+options.hcColor);
 
   const string xvfbTool="xvfb-run";
   const string javaTool="java";

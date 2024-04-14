@@ -86,9 +86,10 @@ struct Options {
   std::filesystem::path hcPath="";
   std::filesystem::path hcPathResolved="";
   uint32_t hcHamQuality=1;
-  std::string hcDither="fs";
+  std::string hcDither="auto";
   uint32_t hcPropagation=autoValue;
   uint32_t hcDiversity=autoValue;
+  std::string hcColor="rgb";
   std::string hcQuant="auto"; // "wu"
   
   ///////////////////////////////////

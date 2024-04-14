@@ -368,10 +368,11 @@ void Configuration::buildOptionsTable() {
   addOptionsBool1("reset_config",opt.resetDefaultConfigFile, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CL}, "reset default config file to original values (keeps hc_path)");
   addOptionsEntry("tmp_dir_prefix",opt.tmpDir, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CF, TI_CL}, "DIRNAME", "prefix of temporary directory name.");
   addOptionsBool1("keep_tmp_dir",opt.keepTmpFiles, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CL, TI_CF},"keep temporary directory (temporary dir is removed by default)");
-  addOptionsEntry("hc_ham_quality",opt.hcHamQuality, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CF, TI_CL}, 0, 3,"ham_convert HAM conversion quality"); // ham8: 1-3, ham6 1-7
+  addOptionsEntry("hc_ham_quality",opt.hcHamQuality, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CF, TI_CL}, 0, 7,"ham_convert HAM conversion quality"); // ham8: 1-3, ham6 1-7
   addOptionsEntry("hc_dither",opt.hcDither, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CF, TI_CL},"STRING","ham_convert dither mode where STRING=auto|none|fs|bayer8x8");   // dither_X, X=fs|bayer8x8
   addOptionsEntry("hc_propagation",opt.hcPropagation, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CF, TI_CL},0,100,"ham_convert error propagation factor, requires hc_dither = fs");
   addOptionsEntry("hc_diversity",opt.hcDiversity, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CF, TI_CL},0,9,"ham_convert diversity X=0-6 for ehb, X=0-9 for other modes, not supported in ham8"); // ehb: 0-6, default 3
+  addOptionsEntry("hc_color",opt.hcColor, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CF, TI_CL},"STRING","ham_convert colorspace, possible values: rgb, cie76, cie94");
   addOptionsEntry("hc_quant",opt.hcQuant, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CF, TI_CL},"STRING","ham_convert quantisation algorithm where STRING=wu|neuquant");
   addOptionsBool1("iff_info",opt.ilbmInfo, ToolInterfaceSet{TI_CDXL_ADVANCED, TI_CL},"show IFF info for given IFF file.");
   addOptionsEntry("in_file",opt.inFileName, ToolInterfaceSet{TI_ANIM, TI_CDXL_ADVANCED, TI_CF, TI_CL}, "FILE", "set input file (available for tool generated config)");
